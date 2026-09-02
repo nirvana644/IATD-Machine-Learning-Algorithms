@@ -1,0 +1,162 @@
+opponent,year,goals_scored,goals_conceded,attendance,in_australia,match_type,result
+North Korea,2015,2,1,,No,Friendly,W
+New Zealand,2015,3,2,,No,Friendly,W
+Netherlands,2015,1,0,,No,Tournament,W
+England,2015,0,3,,No,Tournament,L
+Finland,2015,3,0,,No,Tournament,W
+Czech Republic,2015,6,2,,No,Tournament,W
+Austria,2015,1,2,,No,Friendly,L
+Scotland,2015,1,1,,No,Friendly,D
+Vietnam,2015,4,0,,Yes,Friendly,W
+Vietnam,2015,11,0,,Yes,Friendly,W
+United States,2015,1,3,31148,No,Tournament,L
+Nigeria,2015,2,0,32716,No,Tournament,W
+Sweden,2015,1,1,10177,No,Tournament,D
+Brazil,2015,1,0,12054,No,Tournament,W
+Japan,2015,0,1,19814,No,Tournament,L
+China,2015,1,1,,No,Tournament,D
+England,2015,0,1,,No,Tournament,L
+South Korea,2015,1,0,,No,Friendly,W
+Japan,2016,3,1,4988,No,Tournament,W
+Vietnam,2016,9,0,129,No,Tournament,W
+South Korea,2016,2,0,1149,No,Tournament,W
+North Korea,2016,2,1,900,No,Tournament,W
+China,2016,1,1,250,No,Tournament,D
+New Zealand,2016,2,0,,Yes,Friendly,W
+New Zealand,2016,1,1,,Yes,Friendly,D
+Brazil,2016,1,3,,No,Friendly,L
+Canada,2016,0,2,20521,No,Tournament,L
+Germany,2016,2,2,37475,No,Tournament,D
+Zimbabwe,2016,6,1,5115,No,Tournament,W
+Brazil,2016,0,0,52660,No,Tournament,D
+Sweden,2017,0,1,,No,Tournament,L
+Netherlands,2017,3,2,,No,Tournament,W
+China,2017,2,1,,No,Tournament,W
+Denmark,2017,1,1,,No,Tournament,D
+United States,2017,1,0,15748,No,Tournament,W
+Japan,2017,4,2,9597,No,Tournament,W
+Brazil,2017,6,1,11948,No,Tournament,W
+Brazil,2017,2,1,,Yes,Friendly,W
+Brazil,2017,3,2,,Yes,Friendly,W
+China,2017,3,0,,Yes,Friendly,W
+China,2017,5,1,,Yes,Friendly,W
+Norway,2018,4,3,,No,Tournament,W
+Portugal,2018,0,0,,No,Tournament,D
+China,2018,2,0,,No,Tournament,W
+Portugal,2018,1,2,,No,Tournament,L
+Thailand,2018,0,0,,Yes,Friendly,D
+South Korea,2018,0,0,230,No,Tournament,D
+Vietnam,2018,8,0,401,No,Tournament,W
+Japan,2018,1,1,446,No,Tournament,D
+Thailand,2018,2,2,166,No,Tournament,D
+Japan,2018,0,1,3065,No,Tournament,L
+Brazil,2018,3,1,10307,No,Tournament,W
+United States,2018,1,1,21570,No,Tournament,D
+Japan,2018,2,0,11922,No,Tournament,W
+France,2018,0,2,,No,Friendly,L
+England,2018,1,1,,No,Friendly,D
+Chile,2018,2,3,,Yes,Friendly,L
+Chile,2018,5,0,,Yes,Friendly,W
+New Zealand,2019,2,0,6805,Yes,Tournament,W
+South Korea,2019,4,1,10520,Yes,Tournament,W
+Argentina,2019,3,0,6834,Yes,Tournament,W
+United States,2019,3,5,,No,Friendly,L
+Netherlands,2019,0,3,,No,Friendly,L
+Italy,2019,1,2,15380,No,Tournament,L
+Brazil,2019,3,2,17032,No,Tournament,W
+Jamaica,2019,4,1,17402,No,Tournament,W
+Norway,2019,1,1,12229,No,Tournament,D
+Chile,2019,2,1,,Yes,Friendly,W
+Chile,2019,1,0,,Yes,Friendly,W
+Chinese Taipei,2020,7,0,,Yes,Tournament,W
+Thailand,2020,6,0,,Yes,Tournament,W
+China,2020,1,1,5660,Yes,Tournament,D
+Vietnam,2020,5,0,14014,Yes,Tournament,W
+Vietnam,2020,2,1,,No,Tournament,W
+Germany,2021,2,5,,No,Friendly,L
+Netherlands,2021,0,5,,No,Friendly,L
+Denmark,2021,2,3,,No,Friendly,L
+Sweden,2021,0,0,,No,Friendly,D
+Japan,2021,0,1,,No,Friendly,L
+New Zealand,2021,2,1,0,No,Tournament,W
+Sweden,2021,2,4,0,No,Tournament,L
+United States,2021,0,0,0,No,Tournament,D
+Great Britain,2021,4,3,0,No,Tournament,W
+Sweden,2021,0,1,0,No,Tournament,L
+United States,2021,3,4,0,No,Tournament,L
+Republic of Ireland,2021,2,3,,No,Friendly,L
+Brazil,2021,3,1,15270,Yes,Friendly,W
+Brazil,2021,2,2,12087,Yes,Friendly,D
+United States,2021,0,3,36109,Yes,Friendly,L
+United States,2021,1,1,20495,Yes,Friendly,D
+Indonesia,2022,18,0,,No,Tournament,W
+Philippines,2022,4,0,,No,Tournament,W
+Thailand,2022,2,1,,No,Tournament,W
+South Korea,2022,0,1,,No,Tournament,L
+New Zealand,2022,2,1,10779,Yes,Friendly,W
+New Zealand,2022,3,1,13077,Yes,Friendly,W
+Spain,2022,0,7,6869,No,Friendly,L
+Portugal,2022,1,1,,No,Friendly,D
+Canada,2022,0,1,25016,Yes,Friendly,L
+Canada,2022,1,2,26997,Yes,Friendly,L
+South Africa,2022,4,1,,No,Friendly,W
+Denmark,2022,3,1,,No,Friendly,W
+Sweden,2022,4,0,22065,Yes,Friendly,W
+Thailand,2022,2,0,11271,Yes,Friendly,W
+Czech Republic,2023,4,0,7702,Yes,Tournament,W
+Spain,2023,3,2,17333,Yes,Tournament,W
+Jamaica,2023,3,0,9093,Yes,Tournament,W
+Scotland,2023,0,1,,Yes,Friendly,L
+England,2023,2,0,14489,No,Friendly,W
+France,2023,1,0,50629,Yes,Friendly,W
+Republic of Ireland,2023,1,0,75784,Yes,Tournament,W
+Nigeria,2023,2,3,49156,Yes,Tournament,L
+Canada,2023,4,0,27706,Yes,Tournament,W
+Denmark,2023,2,0,75784,Yes,Tournament,W
+France,2023,0,0,49461,Yes,Tournament,D
+England,2023,1,3,75784,Yes,Tournament,L
+Sweden,2023,0,2,49461,Yes,Tournament,L
+Iran,2023,2,0,18798,Yes,Tournament,W
+Philippines,2023,8,0,59155,Yes,Tournament,W
+Chinese Taipei,2023,3,0,19084,Yes,Tournament,W
+Canada,2023,0,5,6102,No,Friendly,L
+Canada,2023,0,1,48112,No,Friendly,L
+Uzbekistan,2024,3,0,2347,No,Tournament,W
+Uzbekistan,2024,10,0,54120,Yes,Tournament,W
+Mexico,2024,2,0,,No,Friendly,W
+China,2024,1,1,52912,Yes,Friendly,D
+China,2024,2,0,76798,Yes,Friendly,W
+Germany,2024,0,3,,No,Tournament,L
+Zambia,2024,6,5,,No,Tournament,W
+United States,2024,1,2,,No,Tournament,L
+Switzerland,2024,1,1,14370,No,Friendly,D
+Germany,2024,2,1,26623,No,Friendly,W
+Brazil,2024,1,3,47501,Yes,Friendly,L
+Brazil,2024,1,2,25297,Yes,Friendly,L
+Chinese Taipei,2024,3,1,26795,Yes,Friendly,W
+Chinese Taipei,2024,6,0,30097,Yes,Friendly,W
+Japan,2025,0,4,5243,No,Tournament,L
+United States,2025,1,2,23503,No,Tournament,L
+Colombia,2025,1,2,10071,No,Tournament,L
+South Korea,2025,1,0,37199,Yes,Friendly,W
+South Korea,2025,2,0,28019,Yes,Friendly,W
+Argentina,2025,2,0,43020,Yes,Friendly,W
+Argentina,2025,4,1,25125,Yes,Friendly,W
+Slovenia,2025,3,0,8678,Yes,Friendly,W
+Slovenia,2025,1,1,13115,Yes,Friendly,D
+Panama,2025,0,1,10272,Yes,Friendly,L
+Panama,2025,3,2,10657,Yes,Friendly,W
+Wales,2025,2,1,11173,No,Friendly,W
+England,2025,0,3,26544,No,Friendly,L
+New Zealand,2025,5,0,20519,Yes,Friendly,W
+New Zealand,2025,2,0,15097,Yes,Friendly,W
+Philippines,2026,1,0,44379,Yes,Tournament,W
+Iran,2026,4,0,22398,Yes,Tournament,W
+South Korea,2026,3,3,60279,Yes,Tournament,D
+North Korea,2026,2,1,16466,Yes,Tournament,W
+China,2026,2,1,35170,Yes,Tournament,W
+Japan,2026,0,1,74397,Yes,Tournament,L
+Malawi,2026,5,0,,No,Tournament,W
+Kenya,2026,2,0,,No,Tournament,W
+Mexico,2026,0,1,23167,Yes,Friendly,L
+Mexico,2026,3,1,18441,Yes,Friendly,W

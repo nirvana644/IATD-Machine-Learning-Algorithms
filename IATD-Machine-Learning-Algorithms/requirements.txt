@@ -1,0 +1,15 @@
+# IATD Machine Learning Algorithms - pinned student environment
+# These exact versions are what every lab is verified against.
+# Do NOT upgrade without re-running provision/smoke_test.py:
+# newer scikit-learn / pandas releases change behaviour the lessons rely on.
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.13.1
+scikit-learn==1.5.1
+matplotlib==3.9.2
+seaborn==0.13.2
+joblib==1.4.2
+plotly==5.24.1
+mlxtend==0.23.4
+jupyter
+ipykernel
