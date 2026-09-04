@@ -12,6 +12,8 @@ import os
 import sys
 import time
 
+sys.stdout.reconfigure(line_buffering=True)
+
 EXPECTED = {
     "numpy": "1.26.4",
     "pandas": "2.2.2",
@@ -38,6 +40,19 @@ def check_versions():
             bad.append(mod)
     return bad
 
+def check_infrastructure():
+    """The packages the smoke test itself needs. All of them come from
+    requirements.txt - if any is absent, the environment was never
+    provisioned, and that is the finding (we do not quietly install
+    things here: this is a verification tool, not an installer)."""
+    missing = []
+    for mod in ("nbformat", "nbclient", "ipykernel", "jupyter_client"):
+        try:
+            __import__(mod)
+        except ModuleNotFoundError:
+            missing.append(mod)
+    return missing
+
 def run_notebooks():
     import nbformat
     from nbclient import NotebookClient
@@ -49,18 +64,31 @@ def run_notebooks():
             NotebookClient(nb, timeout=900, kernel_name="python3").execute()
             print(f"  [OK ] {nb_path}  ({time.time()-t0:.0f}s)")
         except Exception as exc:
-            print(f"  [BAD] {nb_path}  ({time.time()-t0:.0f}s)  {type(exc).__name__}")
+            detail = " ".join(str(exc).split())
+            if len(detail) > 300:
+                detail = detail[:300] + " ..."
+            print(f"  [BAD] {nb_path}  ({time.time()-t0:.0f}s)  {type(exc).__name__}: {detail}")
             failures.append(nb_path)
     return failures
 
 if __name__ == "__main__":
     os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+    print(f"Interpreter: {sys.executable}")
+    print(f"Python:      {sys.version.split()[0]}")
     print("Package versions:")
     bad_versions = check_versions()
-    try:
-        import nbclient  # noqa: F401
-    except ModuleNotFoundError:
-        os.system(f"{sys.executable} -m pip install -q nbclient nbformat")
+
+    infra_missing = check_infrastructure()
+    if infra_missing:
+        print()
+        print(f"SMOKE TEST FAILED - this Python has no notebook tooling "
+              f"(missing: {', '.join(infra_missing)}).")
+        print("This means 'pip install -r requirements.txt' never ran against "
+              "this interpreter. Provision the environment first:")
+        print(f"  {sys.executable} -m pip install -r requirements.txt")
+        print("(or re-run provision_windows.ps1 and watch for the step that fails)")
+        sys.exit(1)
+
     print("\nExecuting notebooks (the grid-search lab takes a few minutes):")
     failed = run_notebooks()
     print()
