@@ -110,7 +110,7 @@ pandas: 2.2.2
 If the lab includes its smoke test, run it from the project folder:
 
 ```bash
-python provision/smoke_test.py
+python provision/smoke_test.py 2>&1 | tee "provision_results_$(date +%Y-%m-%d_%H-%M-%S).txt"
 ```
 
 ## 7. Configure PyCharm

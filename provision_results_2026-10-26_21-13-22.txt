@@ -1,0 +1,36 @@
+Interpreter: /Users/alvaro/PycharmProjects/IATD-Machine-Learning-Algorithms/.venv/bin/python
+Python:      3.12.3
+Package versions:
+  [OK ] numpy        want 1.26.4     have 1.26.4
+  [OK ] pandas       want 2.2.2      have 2.2.2
+  [OK ] scipy        want 1.13.1     have 1.13.1
+  [OK ] sklearn      want 1.5.1      have 1.5.1
+  [OK ] matplotlib   want 3.9.2      have 3.9.2
+  [OK ] seaborn      want 0.13.2     have 0.13.2
+  [OK ] joblib       want 1.4.2      have 1.4.2
+  [OK ] plotly       want 5.24.1     have 5.24.1
+  [OK ] mlxtend      want 0.23.4     have 0.23.4
+
+Executing notebooks (the grid-search lab takes a few minutes):
+  [OK ] 1_a_NumpyRefresher.ipynb  (2s)
+  [OK ] 1_b_PandasRefresher.ipynb  (2s)
+  [OK ] 1_c_MatplotlibRefresher.ipynb  (2s)
+  [OK ] 2_a_MatildasEDA.ipynb  (4s)
+  [OK ] 2_b_SydneyAirbnbEDA.ipynb  (10s)
+  [OK ] 3_a_LogisticRegression_BreastCancer.ipynb  (5s)
+  [OK ] 3_b_NaiveBayes_FraminghamCHD.ipynb  (3s)
+  [OK ] 4_a_KMeansClustering_Countries.ipynb  (3s)
+  [OK ] 4_b_KMeansClustering_StudentEffort.ipynb  (3s)
+  [OK ] 5_a_Apriori_BreadBasket.ipynb  (2s)
+  [OK ] 5_b_SemiSupervised_LabelSpreading.ipynb  (1s)
+  [OK ] 5_c_SemiSupervised_LabelPropagation.ipynb  (2s)
+  [OK ] 6_a_KMeans_with_PCA.ipynb  (2s)
+  [OK ] 6_b_LogisticRegression_LDA.ipynb  (2s)
+  [OK ] 6_c_LogisticRegression_PCA_GridSearch.ipynb  (56s)
+  [OK ] week_1_lesson_3.ipynb  (2s)
+  [OK ] week_1_lesson_4_duplicates.ipynb  (2s)
+  [OK ] week_1_lesson_4_scikit.ipynb  (5s)
+  [OK ] week_2_lesson_2_mse.ipynb  (1s)
+  [OK ] week_2_lesson_2_regularisation.ipynb  (5s)
+
+SMOKE TEST PASSED - environment matches and all labs run clean.
