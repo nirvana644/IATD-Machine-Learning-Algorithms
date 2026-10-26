@@ -4,15 +4,17 @@ Use **Python 3.12** with the package versions supplied by the lab.
 
 Note that Scikit-learn 1.4 and 1.5 supported Python 3.9—3.12 [official documentation](https://scikit-learn.org/stable/install.html#install-official-release).
 
+The instructions below are for macOS. They may be slightly different for GNU/Linux.
+
 ## 1. Open the project folder
 
-In Terminal, run:
+In Terminal, go to the project directory. Run a command similar to the one below:
 
 ```bash
 cd ~/PycharmProjects/IATD-Machine-Learning-Algorithms
 ```
 
-## 2. Check Python 3.11 is installed
+## 2. Check Python 3.12 is installed
 
 ```bash
 python3.12 --version
@@ -118,7 +120,7 @@ python provision/smoke_test.py
    In older versions, use **Project → Python Interpreter**.
 3. Choose **Add Interpreter → Add Local Interpreter**.
 4. Select **Existing environment**, under **Virtualenv** if applicable.
-5. Select this interpreter:
+5. Select this interpreter (the one previously created) and verify the path is:
 
    ```text
    ~/PycharmProjects/IATD-Machine-Learning-Algorithms/.venv/bin/python
@@ -152,3 +154,10 @@ Terminal activation is separate from PyCharm's interpreter selection. PyCharm us
 - Keep the package versions pinned in `requirements.txt`.
 - Do not upgrade them without following the lab's verification instructions.
 - If using Git, add `.venv/` to `.gitignore`.
+
+The command below will add `.venv/` to `.gitignore` if it's not already there:
+```bash
+touch .gitignore
+grep -Eq '^[[:space:]]*/?\.venv/?[[:space:]]*$' .gitignore ||
+  printf '\n.venv/\n' >> .gitignore
+```
