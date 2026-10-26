@@ -43,6 +43,38 @@ python -m jupyter nbconvert \
     --output-dir="./notebook_pdf" \
     --LatexPreprocessor.title="Week 1 Lesson 4 — Preprocessing data with Scikit" \
     week_1_lesson_4_scikit.ipynb
+    
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 1 Lab 1 — Numpy Refresher" \
+    1_a_NumpyRefresher.ipynb
+
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 1 Lab 1 — Pandas Dataframe Refresher" \
+    1_b_PandasRefresher.ipynb
+
+```
+
+You can make a notebook landscape. However, in the case of dataframes, it seems pandas already splits the row, so it is to no avail.
+
+```bash
+# This is a special case where we want to use a different template for the notebook, so we specify the template path and name explicitly.
+# It will be on landscape orientation, so that a wide table row can fit in the page.
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --TemplateExporter.extra_template_paths="./notebook_pdf" \
+    --template=landscape \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 1 Lab 1 — Pandas Dataframe Refresher" \
+    1_b_PandasRefresher.ipynb
 ```
 
 ## Week 2

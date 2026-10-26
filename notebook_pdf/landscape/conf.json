@@ -1,0 +1,6 @@
+{
+  "base_template": "templates",
+  "mimetypes": {
+    "text/latex": true
+  }
+}
