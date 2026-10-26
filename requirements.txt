@@ -17,3 +17,4 @@ nbformat==5.10.4
 nbclient==0.10.0
 
 dataframe_image # I used this to export a colourful table from display()
+pandas_stubs # Recommended by Pycharm to improve code insight experience

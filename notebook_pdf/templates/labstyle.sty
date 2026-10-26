@@ -1,0 +1,29 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{labstyle}
+
+\RequirePackage{fancyhdr}
+
+\fancypagestyle{labfooter}{
+    \fancyhf{}
+    \fancyfoot[L]{Álvaro Morán Gago}
+    \fancyfoot[R]{Page \thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0.4pt}
+}
+
+% Also apply the footer to pages using the plain style.
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[L]{Álvaro Morán Gago}
+    \fancyfoot[R]{Page \thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0.4pt}
+}
+
+\AtBeginDocument{\pagestyle{labfooter}}
+
+% Compatibility fix for Pandoc tables without captions.
+% This will prevent the error: ! LaTeX Error: No counter 'none' defined.
+\makeatletter
+\@ifundefined{c@none}{\newcounter{none}}{}
+\makeatother

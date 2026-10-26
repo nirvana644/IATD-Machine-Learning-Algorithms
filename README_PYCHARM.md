@@ -161,3 +161,78 @@ touch .gitignore
 grep -Eq '^[[:space:]]*/?\.venv/?[[:space:]]*$' .gitignore ||
   printf '\n.venv/\n' >> .gitignore
 ```
+
+## 9. Export Jupyter notebooks directly to PDF
+
+With **LaTeX already installed**, you can export notebooks directly to PDF using `nbconvert`.
+
+### Activate the virtual environment
+
+Activate the virtual environment if it's not already active:
+
+```bash
+cd ~/PycharmProjects/IATD-Machine-Learning-Algorithms
+source .venv/bin/activate
+```
+
+### Install the exporter
+
+```bash
+python -m pip install nbconvert
+python -m pip check
+```
+
+Keep the lab's existing package pins unchanged.
+
+### Check the required tools
+
+PDF export requires **XeLaTeX** and **Pandoc**:
+
+```bash
+xelatex --version
+pandoc --version
+```
+
+If either command is unavailable, install the missing tool or add its location to your terminal's `PATH`.
+
+On macOS, a MacTeX installation normally places its executables in `/Library/TeX/texbin`. If needed, make them available in the current terminal:
+
+```bash
+if [[ ! -d "/Library/TeX/texbin" ]]; then
+    echo "TeX directory not found: /Library/TeX/texbin"
+elif [[ ! -x "/Library/TeX/texbin/xelatex" ]]; then
+    echo "XeLaTeX executable not found: /Library/TeX/texbin/xelatex"
+elif [[ ":$PATH:" == *":/Library/TeX/texbin:"* ]]; then
+    echo "/Library/TeX/texbin is already in PATH"
+else
+    export PATH="/Library/TeX/texbin:$PATH"
+    echo "Added /Library/TeX/texbin to PATH"
+fi
+```
+
+### Prepare the notebook
+
+1. Run the cells you want to include.
+2. Save the notebook so its outputs are included in the export.
+
+### Export to PDF
+
+Replace the example filename with your notebook's path:
+
+```bash
+python -m jupyter nbconvert --to pdf "your_notebook.ipynb"
+```
+
+The PDF is created alongside the notebook. This command exports saved outputs; it does not execute the cells.
+
+To hide code cells and include only text and results:
+
+```bash
+python -m jupyter nbconvert --to pdf --no-input "your_notebook.ipynb"
+```
+
+### Check the PDF
+
+Review tables, equations, plots, and page breaks.
+
+Interactive charts must have a static image representation to appear in the LaTeX-generated PDF. If LaTeX reports missing packages, install those packages through your TeX distribution and retry.

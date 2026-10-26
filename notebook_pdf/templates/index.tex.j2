@@ -1,0 +1,16 @@
+((* extends 'latex/index.tex.j2' *))
+
+((* block packages *))
+((( super() )))
+\usepackage[australian]{babel}
+\usepackage{datetime}
+\usepackage{fmtcount}
+\usepackage{notebook_pdf/templates/labstyle}
+
+% Australian date format: 26 October 2026
+%\renewcommand{\today}{\number\day\space\monthname\space\number\year}
+% Example: 22nd October 2026
+\renewcommand{\today}{%
+    \ordinalnum{\day}\space\monthname\space\number\year%
+}
+((* endblock packages *))
