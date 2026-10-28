@@ -10,7 +10,7 @@ mkdir -p ./notebook_pdf
 ```
 
 
-## Week 1
+## Week 1: Python data science foundations refresher
 
 ```bash
 # Simple version
@@ -80,11 +80,11 @@ python -m jupyter nbconvert \
     --TemplateExporter.extra_template_paths="./notebook_pdf" \
     --template=landscape \
     --output-dir="./notebook_pdf" \
-    --LatexPreprocessor.title="Week 1 Lab 1 — Pandas Dataframe Refresher" \
+    --LatexPreprocessor.title="Week 1 Lab 2 — Pandas Dataframe Refresher" \
     1_b_PandasRefresher.ipynb
 ```
 
-## Week 2
+## Week 2: Exploring and understanding data with EDA
 
 ```bash
 python -m jupyter nbconvert \
@@ -102,4 +102,28 @@ python -m jupyter nbconvert \
     --output-dir="./notebook_pdf" \
     --LatexPreprocessor.title="Week 2 Lesson 2 — Regularisation using L1 (Lasso) and L2 (Ridge)" \
     week_2_lesson_2_regularisation.ipynb
+    
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 2 Lab 1 — Matildas Exploratory Data Analysis (EDA)" \
+    2_a_MatildasEDA.ipynb
+
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 2 Lab 2 — Sydney AirBnB Exploratory Data Analysis (EDA)" \
+    2_b_SydneyAirbnbEDA.ipynb
 ```
+
+## Week 3: Building classification models with supervised learning
+
+## Week 4: Discovering  patterns with K-Means Clustering
+
+## Week 5: Learning from limited labels and hidden patterns
+
+## Week 6: Optimising and enhancing machine learning models
