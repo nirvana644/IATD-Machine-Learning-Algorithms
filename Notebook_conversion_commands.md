@@ -57,9 +57,16 @@ python -m jupyter nbconvert \
     --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
     --template=templates \
     --output-dir="./notebook_pdf" \
-    --LatexPreprocessor.title="Week 1 Lab 1 — Pandas Dataframe Refresher" \
+    --LatexPreprocessor.title="Week 1 Lab 2 — Pandas Dataframe Refresher" \
     1_b_PandasRefresher.ipynb
 
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 1 Lab 3 — Matplotlib Refresher" \
+    1_c_MatplotlibRefresher.ipynb
 ```
 
 You can make a notebook landscape. However, in the case of dataframes, it seems pandas already splits the row, so it is to no avail.
