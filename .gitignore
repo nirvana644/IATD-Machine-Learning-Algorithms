@@ -5,3 +5,8 @@ __pycache__/
 .venv
 # The train data below is just too large. The zip file is included though
 data/nyc-taxi-train/*
+# This is a cache of map tiles that can be regenerated, so we don't need to include it in the repo
+data/map_tile_cache/*
+
+# The file below contains sensitive information and should not be included in the repo. E.g. CARTO_API_KEY
+.env
