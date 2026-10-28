@@ -18,3 +18,6 @@ nbclient==0.10.0
 
 dataframe_image # I used this to export a colourful table from display()
 pandas_stubs # Recommended by Pycharm to improve code insight experience
+featuretools # Required for the article https://www.kdnuggets.com/2019/06/hitchhikers-guide-feature-extraction.html
+setuptools==81.0.0  # Required by Woodwork for pkg_resources. It will be used in conjunction with featuretools. See https://featuretools.alteryx.com/en/stable/
+category-encoders # Required for the article https://www.kdnuggets.com/2019/06/hitchhikers-guide-feature-extraction.html

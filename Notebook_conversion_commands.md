@@ -102,7 +102,16 @@ python -m jupyter nbconvert \
     --output-dir="./notebook_pdf" \
     --LatexPreprocessor.title="Week 2 Lesson 2 — Regularisation using L1 (Lasso) and L2 (Ridge)" \
     week_2_lesson_2_regularisation.ipynb
-    
+
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 2 Lesson 2 — The Hitchhiker’s Guide to Feature Extraction
+" \
+    week_2_feature_extraction.ipynb
+
 python -m jupyter nbconvert \
     --to pdf \
     --TemplateExporter.extra_template_basedirs="./notebook_pdf" \

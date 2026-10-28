@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 .DS_Store
 .venv
+# The train data below is just too large. The zip file is included though
+data/nyc-taxi-train/*
