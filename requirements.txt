@@ -24,3 +24,4 @@ graphviz # Required to generate graphics
 category-encoders # Required for the article https://www.kdnuggets.com/2019/06/hitchhikers-guide-feature-extraction.html
 contextily # To plot the rasterised image
 python-dotenv # To read the .env file
+kaleido==0.2.1 # Static image export compatible with plotly==5.24.1
