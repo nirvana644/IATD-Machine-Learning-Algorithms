@@ -119,6 +119,14 @@ python -m jupyter nbconvert \
     --output-dir="./notebook_pdf" \
     --LatexPreprocessor.title="Week 2 Lesson 2 — Preparing data for a machine learning model" \
     week_2_preparing_data.ipynb
+    
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 2 Lesson 2 — Analysing the Mental Health Dataset questions" \
+    week_2_preparing_data_helper.ipynb
 
 python -m jupyter nbconvert \
     --to pdf \
