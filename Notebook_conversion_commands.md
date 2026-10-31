@@ -147,6 +147,16 @@ python -m jupyter nbconvert \
 
 ## Week 3: Building classification models with supervised learning
 
+```bash
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 3 Lesson 2 — Sigmoid function" \
+    week_3_lesson_2_sigmoid_func.ipynb
+```
+
 ## Week 4: Discovering  patterns with K-Means Clustering
 
 ## Week 5: Learning from limited labels and hidden patterns
