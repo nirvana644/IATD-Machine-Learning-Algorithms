@@ -157,7 +157,7 @@ python -m jupyter nbconvert \
     week_3_lesson_2_sigmoid_func.ipynb
 ```
 
-## Week 4: Discovering  patterns with K-Means Clustering
+## Week 4: Discovering patterns with K-Means Clustering
 
 ## Week 5: Learning from limited labels and hidden patterns
 
