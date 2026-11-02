@@ -155,6 +155,30 @@ python -m jupyter nbconvert \
     --output-dir="./notebook_pdf" \
     --LatexPreprocessor.title="Week 3 Lesson 2 — Sigmoid function" \
     week_3_lesson_2_sigmoid_func.ipynb
+    
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 3 Lesson 2 — Question 2 Naive Bayes" \
+    week_3_lesson_2_question_2.ipynb
+    
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 3 Lesson 2 — Question 3 Naive Bayes" \
+    week_3_lesson_2_question_3.ipynb
+    
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 3 Lesson 2 — Naive Bayes applied to Restaurant Reviews" \
+    week_3_naive_bayes_reviews.ipynb
 ```
 
 ## Week 4: Discovering patterns with K-Means Clustering
