@@ -16,3 +16,8 @@
     \ordinalnum{\day}\space\monthname\space\number\year%
 }
 ((* endblock packages *))
+
+((* block title *))
+((* set nb_title = nb.metadata.get('title', '') or resources['metadata']['name'] *))
+\title{((* for line in nb_title.splitlines() *))((( line | escape_latex )))((* if not loop.last *))\\((* endif *))((* endfor *))}
+((* endblock title *))

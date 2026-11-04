@@ -143,6 +143,28 @@ python -m jupyter nbconvert \
     --output-dir="./notebook_pdf" \
     --LatexPreprocessor.title="Week 2 Lab 2 — Sydney AirBnB Exploratory Data Analysis (EDA)" \
     2_b_SydneyAirbnbEDA.ipynb
+    
+# Run this notebook twice:
+# 1. Set variable 'USE_STRATIFICATION=False' 
+# 2. Run the notebook conversion TWICE
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --output="2_c_Airbnb_Splitting_Cleaning_Demo_no_stratify" \
+    --LatexPreprocessor.title=$'Week 2 Lab 3 — Airbnb: clean, split, train, cross-validate, test\nNot Stratified' \
+    2_c_Airbnb_Splitting_Cleaning_Demo.ipynb
+# 1. Set variable 'USE_STRATIFICATION=True' and run the notebook. This must be the last value on the notebook as it's the default.
+# 2. Run the notebook conversion TWICE
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --output="2_c_Airbnb_Splitting_Cleaning_Demo_stratify" \
+    --LatexPreprocessor.title=$'Week 2 Lab 3 — Airbnb: clean, split, train, cross-validate, test\nStratified' \
+    2_c_Airbnb_Splitting_Cleaning_Demo.ipynb
 ```
 
 ## Week 3: Building classification models with supervised learning
@@ -155,7 +177,8 @@ python -m jupyter nbconvert \
     --output-dir="./notebook_pdf" \
     --LatexPreprocessor.title="Week 3 Lesson 2 — Sigmoid function" \
     week_3_lesson_2_sigmoid_func.ipynb
-    
+
+# This needs to be run twice so that the image on the last page is included in the PDF    
 python -m jupyter nbconvert \
     --to pdf \
     --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
