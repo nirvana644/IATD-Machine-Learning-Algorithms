@@ -165,6 +165,43 @@ python -m jupyter nbconvert \
     --output="2_c_Airbnb_Splitting_Cleaning_Demo_stratify" \
     --LatexPreprocessor.title=$'Week 2 Lab 3 — Airbnb: clean, split, train, cross-validate, test\nStratified' \
     2_c_Airbnb_Splitting_Cleaning_Demo.ipynb
+    
+# Automated
+setopt INTERACTIVE_COMMENTS
+(
+    # Stop immediately if execution or conversion fails.
+    set -e
+
+    notebook="2_c_Airbnb_Splitting_Cleaning_Demo.ipynb"
+
+    for mode in False True; do
+        if [[ "$mode" == "True" ]]; then
+            suffix="stratify"
+            subtitle="Stratified"
+        else
+            suffix="no_stratify"
+            subtitle="Not Stratified"
+        fi
+
+        # Execute and save fresh outputs for this variant.
+        USE_STRATIFICATION="$mode" python -m jupyter nbconvert \
+            --to notebook \
+            --execute \
+            --inplace \
+            --ExecutePreprocessor.timeout=600 \
+            "$notebook"
+
+        # Export the freshly saved outputs to PDF.
+        python -m jupyter nbconvert \
+            --to pdf \
+            --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+            --template=templates \
+            --output-dir="./notebook_pdf" \
+            --output="2_c_Airbnb_Splitting_Cleaning_Demo_${suffix}" \
+            --LatexPreprocessor.title=$'Week 2 Lab 3 — Airbnb: clean, split, train, cross-validate, test\n'"$subtitle" \
+            "$notebook"
+    done
+)
 ```
 
 ## Week 3: Building classification models with supervised learning
