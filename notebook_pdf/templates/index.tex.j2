@@ -12,11 +12,12 @@
 % Australian date format: 26 October 2026
 %\renewcommand{\today}{\number\day\space\monthname\space\number\year}
 % Example: 22nd October 2026
-\renewcommand{\today}{%
+\renewcommand{\today}{
     \ordinalnum{\day}\space\monthname\space\number\year%
 }
 ((* endblock packages *))
 
+% The block below allows for new lines line '\n' in the title. Used with 2_c_Airbnb_Splitting_Cleaning_Demo.ipynb
 ((* block title *))
 ((* set nb_title = nb.metadata.get('title', '') or resources['metadata']['name'] *))
 \title{((* for line in nb_title.splitlines() *))((( line | escape_latex )))((* if not loop.last *))\\((* endif *))((* endfor *))}

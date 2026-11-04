@@ -136,7 +136,10 @@ python -m jupyter nbconvert \
     --LatexPreprocessor.title="Week 2 Lab 1 — Matildas Exploratory Data Analysis (EDA)" \
     2_a_MatildasEDA.ipynb
 
-python -m jupyter nbconvert \
+# The command below will run the notebook. Therefore, any existing output will be recreated.
+EXPORT_PDF=True python -m jupyter nbconvert \
+    --execute \
+    --ExecutePreprocessor.timeout=600 \
     --to pdf \
     --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
     --template=templates \
