@@ -242,6 +242,25 @@ python -m jupyter nbconvert \
     --output-dir="./notebook_pdf" \
     --LatexPreprocessor.title="Week 3 Lesson 2 — Naive Bayes applied to Restaurant Reviews" \
     week_3_naive_bayes_reviews.ipynb
+
+# This will delete existing outputs. You might need to run it twice.
+EXPORT_PDF=True python -m jupyter nbconvert \
+    --execute \
+    --ExecutePreprocessor.timeout=600 \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 3 Lab 1 — Logistic Regression Breast Cancer" \
+    3_a_LogisticRegression_BreastCancer.ipynb
+    
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 3 Lab 2 — Predicting Heart Disease with Naive Bayes" \
+    3_b_NaiveBayes_FraminghamCHD.ipynb
 ```
 
 ## Week 4: Discovering patterns with K-Means Clustering
