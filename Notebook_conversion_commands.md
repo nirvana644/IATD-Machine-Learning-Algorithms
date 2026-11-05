@@ -1,5 +1,8 @@
 # Conversion commands
 
+These commands work on MacOs using the default shell (ZSH).
+
+For GNU/Linux they should mostly work. But be aware that in most Linux distributions the default shell is Bash. Commands such as `setopt INTERACTIVE_COMMENTS` are ZSH-specific.
 
 ## General
 
@@ -261,6 +264,14 @@ python -m jupyter nbconvert \
     --output-dir="./notebook_pdf" \
     --LatexPreprocessor.title="Week 3 Lab 2 — Predicting Heart Disease with Naive Bayes" \
     3_b_NaiveBayes_FraminghamCHD.ipynb
+    
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title=$'Week 3 Lab 2 — Predicting Heart Disease with Naive Bayes\nImproved version with respect to the original class one' \
+    3_b_NaiveBayes_Improved.ipynb
 ```
 
 ## Week 4: Discovering patterns with K-Means Clustering
@@ -268,3 +279,11 @@ python -m jupyter nbconvert \
 ## Week 5: Learning from limited labels and hidden patterns
 
 ## Week 6: Optimising and enhancing machine learning models
+
+## Extra
+
+```bash
+# Finding notebooks bigger than 1MB
+# This is useful to avoid uploading super large noteabook to GitHub
+find . -maxdepth 1 -type f -name '*.ipynb' -size +1048576c -exec ls -lh {} +
+```
