@@ -238,6 +238,41 @@ python -m jupyter nbconvert \
     --LatexPreprocessor.title="Week 3 Lesson 2 — Question 3 Naive Bayes" \
     week_3_lesson_2_question_3.ipynb
     
+# Decision tree. There are 4 decision tree notebooks, but the third one has a missing dataset curated by the original author that can't be downloaded. Without that dataset most of the notebook can't be done and it's not worth to export it.
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 3 Lesson 2 — Decision Tree Algorithm, Explained" \
+    week_3_decision_tree_1.ipynb
+    
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 3 Lesson 2 — Decision tree - Classification" \
+    week_3_decision_tree_2_classification.ipynb
+    
+# The third decision tree notebook will NOT be exported due to the missing dataset.
+
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 3 Lesson 2 — Decision Tree \& Random Forest" \
+    week_3_decision_tree_4_random-forest-for-beginners.ipynb
+    
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 3 Lesson 2 — IBM HR Analytics Employee Attrition & Performance\nDataset exploration" \
+    week_3_dataset_exploration.ipynb
+    
 python -m jupyter nbconvert \
     --to pdf \
     --TemplateExporter.extra_template_basedirs="./notebook_pdf" \

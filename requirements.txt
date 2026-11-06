@@ -25,3 +25,6 @@ category-encoders # Required for the article https://www.kdnuggets.com/2019/06/h
 contextily # To plot the rasterised image
 python-dotenv # To read the .env file
 kaleido==0.2.1 # Static image export compatible with plotly==5.24.1
+
+pydotplus # Required for week_3_decision_tree_1.ipynb to visualize the tree
+pydot # Required for week_3_decision_tree_4_random-forest-for-beginners
