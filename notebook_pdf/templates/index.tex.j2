@@ -1,5 +1,13 @@
 ((* extends 'latex/index.tex.j2' *))
 
+% Use the static counterpart during LaTeX/PDF export; keep the notebook GIF.
+((* block markdowncell scoped *))
+((( super()
+    | replace('images/week_3/decision_tree_12.gif', 'images/week_3/decision_tree_12.png')
+    | replace('images/week_3/decision_tree_14.gif', 'images/week_3/decision_tree_14.png')
+)))
+((* endblock markdowncell *))
+
 ((* block packages *))
 ((( super() )))
 \usepackage[australian]{babel}
