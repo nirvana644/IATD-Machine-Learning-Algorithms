@@ -238,7 +238,7 @@ python -m jupyter nbconvert \
     --LatexPreprocessor.title="Week 3 Lesson 2 — Question 3 Naive Bayes" \
     week_3_lesson_2_question_3.ipynb
     
-# Decision tree. There are 4 decision tree notebooks, but the third one has a missing dataset curated by the original author that can't be downloaded. Without that dataset most of the notebook can't be done and it's not worth to export it.
+# Decision tree. There are 4 decision tree notebooks.
 python -m jupyter nbconvert \
     --to pdf \
     --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
@@ -255,7 +255,13 @@ python -m jupyter nbconvert \
     --LatexPreprocessor.title="Week 3 Lesson 2 — Decision tree - Classification" \
     week_3_decision_tree_2_classification.ipynb
     
-# The third decision tree notebook will NOT be exported due to the missing dataset.
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 3 Lesson 2 — Decision Tree Regression" \
+    week_3_decision_tree_3_regression.ipynb
 
 python -m jupyter nbconvert \
     --to pdf \
@@ -271,7 +277,7 @@ python -m jupyter nbconvert \
     --template=templates \
     --output-dir="./notebook_pdf" \
     --LatexPreprocessor.title="Week 3 Lesson 2 — IBM HR Analytics Employee Attrition & Performance\nDataset exploration" \
-    week_3_dataset_exploration.ipynb
+    week_3_decision_tree_4_dataset_exploration.ipynb
     
 python -m jupyter nbconvert \
     --to pdf \
@@ -316,6 +322,21 @@ python -m jupyter nbconvert \
 ## Week 6: Optimising and enhancing machine learning models
 
 ## Extra
+
+### Tables spanning multiple PDF pages
+
+In `week_3_decision_tree_3_regression.ipynb`, `display_table(summary)` now
+generates a LaTeX `longtable`, allowing page breaks and repeated column headers.
+You can also request this explicitly with `display_table(summary, multipage=True)`.
+
+Rerun the cell defining `display_table`, then rerun the table-display cells and
+save the notebook before running the existing PDF export command. Without
+`--execute`, nbconvert exports saved outputs, including any old single-page tables.
+
+`fit_to_page=True` uses a single-page resizing box and disables automatic
+multipage output. Do not combine it with `multipage=True`; resizing boxes cannot
+break across pages. For a long table, leave `fit_to_page=False` (the default).
+Use `multipage=False` to explicitly retain a normal single-page table.
 
 ```bash
 # Finding notebooks bigger than 1MB
