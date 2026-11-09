@@ -254,7 +254,8 @@ python -m jupyter nbconvert \
     --output-dir="./notebook_pdf" \
     --LatexPreprocessor.title="Week 3 Lesson 2 — Decision tree - Classification" \
     week_3_decision_tree_2_classification.ipynb
-    
+
+# This needs to be run twice so that the last plotted graph is included in the final PDF.       
 python -m jupyter nbconvert \
     --to pdf \
     --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
