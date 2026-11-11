@@ -236,3 +236,15 @@ python -m jupyter nbconvert --to pdf --no-input "your_notebook.ipynb"
 Review tables, equations, plots, and page breaks.
 
 Interactive charts must have a static image representation to appear in the LaTeX-generated PDF. If LaTeX reports missing packages, install those packages through your TeX distribution and retry.
+
+## Protect my final assignment
+
+The command below will ask for a password so only the encrypted file is uploaded.
+
+```bash
+# Encrypt. It will ask for a password to encrypt
+zip -e assignment/assignment-protected.zip assignment/assignment.ipynb
+
+# Decrypt. Use the same password to decrypt
+unzip assignment/assignment-protected.zip -d ~/Downloads
+```

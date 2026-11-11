@@ -10,3 +10,6 @@ data/map_tile_cache/*
 
 # The file below contains sensitive information and should not be included in the repo. E.g. CARTO_API_KEY
 .env
+
+# So that other students can't copy my assignment
+assignment/assignment.ipynb
