@@ -243,7 +243,7 @@ The command below will ask for a password so only the encrypted file is uploaded
 
 ```bash
 # Encrypt. It will ask for a password to encrypt
-zip -e assignment/assignment-protected.zip assignment/assignment.ipynb
+zip -9 -e assignment/assignment-protected.zip assignment/assignment.ipynb
 
 # Decrypt. Use the same password to decrypt
 unzip assignment/assignment-protected.zip -d ~/Downloads
