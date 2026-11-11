@@ -318,6 +318,16 @@ python -m jupyter nbconvert \
 
 ## Week 4: Discovering patterns with K-Means Clustering
 
+```bash
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 4 Lesson 2 — K-Nearest Neighbors" \
+    week_4_lesson_2_k_neighbours.ipynb
+```
+
 ## Week 5: Learning from limited labels and hidden patterns
 
 ## Week 6: Optimising and enhancing machine learning models
