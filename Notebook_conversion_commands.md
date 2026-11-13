@@ -326,6 +326,14 @@ python -m jupyter nbconvert \
     --output-dir="./notebook_pdf" \
     --LatexPreprocessor.title="Week 4 Lesson 2 — K-Nearest Neighbors" \
     week_4_lesson_2_k_neighbours.ipynb
+    
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 4 Lesson 3 — Apriori Algorithm" \
+    week_4_lesson_3_apriori_algorithm.ipynb
 ```
 
 ## Week 5: Learning from limited labels and hidden patterns
