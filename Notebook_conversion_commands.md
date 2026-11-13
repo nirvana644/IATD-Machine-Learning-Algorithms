@@ -346,6 +346,15 @@ python -m jupyter nbconvert \
 # But that requires modifying values by hand. Automated exercice:
 chmod +x week_4_lesson_3_apriori_vs_fp_growth.sh
 ./week_4_lesson_3_apriori_vs_fp_growth.sh
+
+# No need to convert the helper notebook, which I used to test matrix multiplications.
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 4 Lesson 3 — Hidden Markov Models: Rachel infers Lily’s weather" \
+    week_4_lesson_3_hidden_markov_models.ipynb
 ```
 
 ## Week 5: Learning from limited labels and hidden patterns

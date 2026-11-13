@@ -1,6 +1,14 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{labstyle}
 
+% This allows the letter pi to be on a header as required in week_4_lesson_3_hidden_markov_models.ipynb
+% For that lab, only pi is required, but I added others just in case.
+\RequirePackage{newunicodechar}
+\newunicodechar{π}{\ensuremath{\pi}}
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{θ}{\ensuremath{\theta}}
+
 % xcolor and tikz are required by week_4_lesson_3_apriori_algorithm.ipynb
 \RequirePackage{xcolor}
 \RequirePackage{tikz}
