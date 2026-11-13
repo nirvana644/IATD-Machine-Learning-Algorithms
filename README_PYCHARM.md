@@ -239,6 +239,8 @@ Interactive charts must have a static image representation to appear in the LaTe
 
 ## Protect my final assignment
 
+Protect my final assignment from other students before we have all submitted the assignment.
+
 The command below will ask for a password so only the encrypted file is uploaded.
 
 ```bash
@@ -247,4 +249,59 @@ zip -9 -e assignment/assignment-protected.zip assignment/assignment.ipynb
 
 # Decrypt. Use the same password to decrypt
 unzip assignment/assignment-protected.zip -d ~/Downloads
+```
+
+Using an environment variable stored in `.env` (this file contains secrets and must never be uploaded):
+
+```bash
+set -a
+source .env
+set +a
+
+zip -9 -P "$ZIP_PASSWORD" \
+  assignment/assignment-protected.zip \
+  assignment/assignment.ipynb
+  
+unzip -P "$ZIP_PASSWORD" \
+  assignment/assignment-protected.zip \
+  -d ~/Downloads
+```
+
+Remove it from GitHub:
+
+```bash
+# Dry run removal
+git filter-repo \
+  --path assignment/assignment.ipynb \
+  --invert-paths \
+  --dry-run --force
+
+# Execute the removal
+git filter-repo \
+  --path assignment/assignment.ipynb \
+  --invert-paths \
+  --force
+
+# Verify 1
+grep -nF "assignment/assignment.ipynb" \
+  .git/filter-repo/fast-export.filtered
+  
+# Verify 2: compare before and after
+grep -cF "assignment/assignment.ipynb" \
+  .git/filter-repo/fast-export.original
+
+grep -cF "assignment/assignment.ipynb" \
+  .git/filter-repo/fast-export.filtered
+  
+# Check the remote
+git remote -v
+
+# If it's empty
+git remote add origin https://github.com/nirvana644/IATD-Machine-Learning-Algorithms.git
+
+# Verify there are no pending operations
+git status
+
+# Push
+git push --force origin main
 ```
