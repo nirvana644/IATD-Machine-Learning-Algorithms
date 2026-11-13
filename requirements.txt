@@ -32,3 +32,6 @@ pydot # Required for week_3_decision_tree_4_random-forest-for-beginners
 # Keras is required for week_3_comprehensive-guide-to-ann.ipynb
 keras==3.15.1
 tensorflow==2.21.0   # Keras 3 backend
+
+nbconvert[webpdf] # To convert images in week_4_lesson_3_apriori_vs_fp_growth.ipynb
+# That will also require: python -m playwright install chromium

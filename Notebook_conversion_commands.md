@@ -334,6 +334,18 @@ python -m jupyter nbconvert \
     --output-dir="./notebook_pdf" \
     --LatexPreprocessor.title="Week 4 Lesson 3 — Apriori Algorithm" \
     week_4_lesson_3_apriori_algorithm.ipynb
+
+# Prior to converting this notebook run:
+# Install nbconvert[webpdf] (although this should have been done already): python -m pip install -r requirements.txt
+# Install a headless browser: python -m playwright install chromium
+python -m jupyter nbconvert \
+    --to webpdf \
+    --output-dir="./notebook_pdf" \
+    week_4_lesson_3_apriori_vs_fp_growth.ipynb
+    
+# But that requires modifying values by hand. Automated exercice:
+chmod +x week_4_lesson_3_apriori_vs_fp_growth.sh
+./week_4_lesson_3_apriori_vs_fp_growth.sh
 ```
 
 ## Week 5: Learning from limited labels and hidden patterns
