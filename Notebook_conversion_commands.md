@@ -355,6 +355,9 @@ python -m jupyter nbconvert \
     --output-dir="./notebook_pdf" \
     --LatexPreprocessor.title="Week 4 Lesson 3 — Hidden Markov Models: Rachel infers Lily’s weather" \
     week_4_lesson_3_hidden_markov_models.ipynb
+    
+chmod +x week_4_lesson_4_key_terminology_explained.sh
+./week_4_lesson_4_key_terminology_explained.sh
 ```
 
 ## Week 5: Learning from limited labels and hidden patterns

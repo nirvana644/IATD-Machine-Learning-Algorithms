@@ -35,3 +35,5 @@ tensorflow==2.21.0   # Keras 3 backend
 
 nbconvert[webpdf] # To convert images in week_4_lesson_3_apriori_vs_fp_growth.ipynb
 # That will also require: python -m playwright install chromium
+
+sympy # To convert a matrix to latex in week_4_lesson_4_key_terminology_explained.ipynb

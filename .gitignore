@@ -13,3 +13,10 @@ data/map_tile_cache/*
 
 # So that other students can't copy my assignment
 assignment/assignment.ipynb
+
+# Temporary files
+notebook_pdf/week4_pdf_build_pca_files/*
+# Verify .aux, .log and .out files: ls -lah notebook_pdf/*.{aux,log,out}
+notebook_pdf/*.aux
+notebook_pdf/*.log
+notebook_pdf/*.out
