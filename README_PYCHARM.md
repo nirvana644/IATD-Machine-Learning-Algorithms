@@ -273,6 +273,9 @@ git commit -m "Exclude large LFWcrop dataset"
 git push
 
 rm .gitattributes # Only if it's empty
+
+# Disable LFS if I will no longer use it
+git lfs uninstall --local
 ```
 
 Alternatively, I can split the ZIP into parts:
