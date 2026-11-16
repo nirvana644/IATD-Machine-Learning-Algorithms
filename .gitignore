@@ -7,6 +7,10 @@ __pycache__/
 data/nyc-taxi-train/*
 # This is a cache of map tiles that can be regenerated, so we don't need to include it in the repo
 data/map_tile_cache/*
+# This is for week_4_lesson_6_eigenfaces
+data/lfwcrop_grey
+data/lfwcrop_color
+data/lfwcrop_color.zip
 
 # The file below contains sensitive information and should not be included in the repo. E.g. CARTO_API_KEY
 .env

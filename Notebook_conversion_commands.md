@@ -367,6 +367,28 @@ python -m jupyter nbconvert \
     --LatexPreprocessor.title="Week 4 Lesson 6 — Factorial Planes" \
     --LatexPreprocessor.author_names="Álvaro Morán Gago" \
     week_4_lesson_6_factorial_planes.ipynb
+    
+for suffix in grey color; do
+    if [[ "$suffix" == "grey" ]]; then
+        use_grey=true
+        subtitle="Grayscale dataset"
+    else
+        use_grey=false
+        subtitle="Colour dataset"
+    fi
+
+    USE_GREY_DATASET="$use_grey" python -m jupyter nbconvert \
+        --execute \
+        --ExecutePreprocessor.timeout=600 \
+        --to pdf \
+        --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+        --template=templates \
+        --output-dir="./notebook_pdf" \
+        --output="week_4_lesson_6_eigenfaces_${suffix}" \
+        --LatexPreprocessor.title=$'Week 4 Lesson 6 — Eigenfaces: Recovering Humans from Ghosts\n'"$subtitle" \
+        --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+        week_4_lesson_6_eigenfaces.ipynb || break
+done
 ```
 
 ## Week 5: Learning from limited labels and hidden patterns
