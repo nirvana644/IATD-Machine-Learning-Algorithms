@@ -1151,10 +1151,10 @@ Sample covariance (hours, scores) & \textbf{25} & \\
 
 The covariance has units of hours × score points.
 
-Dividing by the standard deviations:
+Dividing by the standard deviations (\(s_{x} \times s_{y}\)):
 
 \[
-r=\frac{25}{\sqrt{2.5}\sqrt{250}}=\frac{25}{\sqrt{2.5\times 250}}=\frac{25}{25}=\boxed{1}
+r=\frac{\operatorname{Cov}(hours,scores)}{s_{hours} \times s_{scores}}=\frac{25}{\sqrt{2.5}\sqrt{250}}=\frac{25}{\sqrt{2.5\times 250}}=\frac{25}{25}=\boxed{1}
 \]
 
 The units cancel:
@@ -1166,8 +1166,9 @@ The units cancel:
 The result is dimensionless and always falls between -1 and +1, provided
 both variables have non-zero standard deviations.
 
-If you divided by the product of the variances instead, you would not
-obtain a scale-independent correlation coefficient.
+If you divided by the product of the variances instead
+(\(s_{x}^2 \times s_{y}^2\)), you would not obtain a scale-independent
+correlation coefficient.
 
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
@@ -2209,12 +2210,14 @@ corresponding eigenvalues quantify the variance along those directions.
 
 
 
-    \subsubsection{Why are eigenvalues and eigenvectors
-useful?}\label{why-are-eigenvalues-and-eigenvectors-useful}
+    \subsubsection{Why are eigenvalues and eigenvectors useful in
+PCA?}\label{why-are-eigenvalues-and-eigenvectors-useful-in-pca}
 
 For \textbf{symmetric covariance matrices}, NumPy's
-\texttt{np.linalg.eigh} is preferable to \texttt{eig}: the eigenvalues
-are real and the eigenvectors can be chosen orthonormal.
+\href{https://numpy.org/doc/stable/reference/generated/numpy.linalg.eigh.html}{\texttt{np.linalg.eigh}}
+is preferable to
+\href{https://numpy.org/doc/stable/reference/generated/numpy.linalg.eig.html}{\texttt{eig}}:
+the eigenvalues are real and the eigenvectors can be chosen orthonormal.
 
 \begin{itemize}
 \tightlist
@@ -2225,8 +2228,8 @@ are real and the eigenvectors can be chosen orthonormal.
   Its eigenvalues give the variance along each corresponding unit
   eigenvector.
 \item
-  The largest eigenvalue identifies the \textbf{principal direction of
-  greatest variance}.
+  The eigenvector corresponding to the largest eigenvalue identifies the
+  \textbf{principal direction of greatest variance (PC1).}
 \end{itemize}
 
 Eigenvector signs are arbitrary: \(\mathbf v\) and \(-\mathbf v\)
@@ -2316,9 +2319,17 @@ In Principal Component Analysis (PCA):
 \boxed{\text{Explained Variance Ratio}_i = \frac{\lambda_i}{\sum_{j=1}^{n}\lambda_j}}
 \]
 
-Where: - \(\lambda_i\): Eigenvalue of principal component \(i\). -
-\(\sum_{j=1}^{n}\lambda_j\): Sum of all eigenvalues (total variance). -
-\(n\): Number of principal components.
+Where:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\lambda_i\): Eigenvalue of principal component \(i\).
+\item
+  \(\sum_{j=1}^{n}\lambda_j\): Sum of all eigenvalues (total variance).
+\item
+  \(n\): Number of principal components.
+\end{itemize}
 
 \paragraph{Example}\label{example}
 
@@ -2599,7 +2610,7 @@ one-dimensional \textbf{linear projections} of the centred data.
 \prompt{In}{incolor}{20}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{Z} \PY{o}{=} \PY{n}{X\PYZus{}centered} \PY{o}{@} \PY{n}{X\PYZus{}eigen\PYZus{}vectors}
-\PY{n}{pc1\PYZus{}scores} \PY{o}{=} \PY{n}{Z}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}
+\PY{n}{pc1\PYZus{}scores} \PY{o}{=} \PY{n}{Z}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]} \PY{c+c1}{\PYZsh{} All rows, first column of Z}
 \PY{n}{X\PYZus{}reconstructed\PYZus{}1d} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{outer}\PY{p}{(}\PY{n}{pc1\PYZus{}scores}\PY{p}{,} \PY{n}{X\PYZus{}eigen\PYZus{}vectors}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)} \PY{o}{+} \PY{n}{centre}
 
 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Original X shape:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{X}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
@@ -3016,7 +3027,9 @@ Then:
 \end{aligned}
 \]
 
-NumPy uses \textbf{broadcasting} to add the mean vector to every row.
+NumPy uses
+\href{https://numpy.org/doc/2.5/user/basics.broadcasting.html}{\textbf{broadcasting}}
+to add the mean vector to every row.
 
 The reconstructed dataset again has two features, but the observations
 now lie entirely along the PC1 axis.
@@ -3444,7 +3457,7 @@ Sample covariance of X and Y: -4.0
 
 \PY{n}{display}\PY{p}{(}\PY{n}{Math}\PY{p}{(}
     \PY{l+s+sa}{rf}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{begin}\PY{l+s+se}{\PYZob{}\PYZob{}}\PY{l+s+s2}{aligned}\PY{l+s+se}{\PYZcb{}\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}
-    \PY{l+s+sa}{rf}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{operatorname}\PY{l+s+se}{\PYZob{}\PYZob{}}\PY{l+s+s2}{Cov}\PY{l+s+se}{\PYZcb{}\PYZcb{}}\PY{l+s+s2}{(}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{mathrm}\PY{l+s+se}{\PYZob{}\PYZob{}}\PY{l+s+s2}{hours}\PY{l+s+se}{\PYZcb{}\PYZcb{}}\PY{l+s+s2}{,}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{mathrm}\PY{l+s+se}{\PYZob{}\PYZob{}}\PY{l+s+s2}{scores}\PY{l+s+se}{\PYZcb{}\PYZcb{}}\PY{l+s+s2}{)}\PY{l+s+s2}{\PYZdq{}}
+    \PY{l+s+sa}{rf}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{boxed}\PY{l+s+se}{\PYZob{}\PYZob{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{operatorname}\PY{l+s+se}{\PYZob{}\PYZob{}}\PY{l+s+s2}{Cov}\PY{l+s+se}{\PYZcb{}\PYZcb{}}\PY{l+s+s2}{(}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{mathrm}\PY{l+s+se}{\PYZob{}\PYZob{}}\PY{l+s+s2}{hours}\PY{l+s+se}{\PYZcb{}\PYZcb{}}\PY{l+s+s2}{,}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{mathrm}\PY{l+s+se}{\PYZob{}\PYZob{}}\PY{l+s+s2}{scores}\PY{l+s+se}{\PYZcb{}\PYZcb{}}\PY{l+s+s2}{)}\PY{l+s+se}{\PYZcb{}\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}
     \PY{l+s+sa}{rf}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ \PYZam{}= }\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{frac}\PY{l+s+se}{\PYZob{}\PYZob{}}\PY{l+s+si}{\PYZob{}}\PY{n}{covariance\PYZus{}terms}\PY{l+s+si}{\PYZcb{}}\PY{l+s+se}{\PYZcb{}\PYZcb{}}\PY{l+s+se}{\PYZob{}\PYZob{}}\PY{l+s+si}{\PYZob{}}\PY{n}{n\PYZus{}practice\PYZus{}x}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZhy{}1}\PY{l+s+se}{\PYZcb{}\PYZcb{}}\PY{l+s+s2}{ }\PY{l+s+se}{\PYZbs{}\PYZbs{}}\PY{l+s+s2}{[6pt]}\PY{l+s+s2}{\PYZdq{}}
     \PY{l+s+sa}{rf}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ \PYZam{}= }\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{frac}\PY{l+s+se}{\PYZob{}\PYZob{}}\PY{l+s+si}{\PYZob{}}\PY{n}{covariance\PYZus{}terms\PYZus{}after}\PY{l+s+si}{\PYZcb{}}\PY{l+s+se}{\PYZcb{}\PYZcb{}}\PY{l+s+se}{\PYZob{}\PYZob{}}\PY{l+s+si}{\PYZob{}}\PY{n}{n\PYZus{}practice\PYZus{}x}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZhy{}1}\PY{l+s+se}{\PYZcb{}\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}
     \PY{l+s+sa}{rf}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ = }\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{frac}\PY{l+s+se}{\PYZob{}\PYZob{}}\PY{l+s+si}{\PYZob{}}\PY{n}{latex\PYZus{}sum}\PY{p}{(}\PY{n}{products}\PY{p}{)}\PY{l+s+si}{\PYZcb{}}\PY{l+s+se}{\PYZcb{}\PYZcb{}}\PY{l+s+se}{\PYZob{}\PYZob{}}\PY{l+s+si}{\PYZob{}}\PY{n}{n\PYZus{}practice\PYZus{}x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{l+s+si}{\PYZcb{}}\PY{l+s+se}{\PYZcb{}\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}
@@ -3488,7 +3501,7 @@ Sample covariance of X and Y: -4.0
     $\displaystyle \operatorname{Cov}(X,Y) = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{n-1}$
 
     
-    $\displaystyle \begin{aligned}\operatorname{Cov}(\mathrm{hours},\mathrm{scores}) &= \frac{(2-4)(6-4) + (4-4)(4-4) + (6-4)(2-4)}{3-1} \\[6pt] &= \frac{(-2)(2) + (0)(0) + (2)(-2)}{3-1} = \frac{-4 + 0 + -4}{2} = \frac{-8}{2} = \boxed{-4}\end{aligned}$
+    $\displaystyle \begin{aligned}\boxed{\operatorname{Cov}(\mathrm{hours},\mathrm{scores})} &= \frac{(2-4)(6-4) + (4-4)(4-4) + (6-4)(2-4)}{3-1} \\[6pt] &= \frac{(-2)(2) + (0)(0) + (2)(-2)}{3-1} = \frac{-4 + 0 + -4}{2} = \frac{-8}{2} = \boxed{-4}\end{aligned}$
 
     
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
