@@ -10,7 +10,7 @@ matplotlib==3.9.2
 seaborn==0.13.2
 joblib==1.4.2
 plotly==5.24.1
-mlxtend==0.23.4
+mlxtend==0.23.4 # Required in 5_a_Apriori_BreadBasket.ipynb. The original lab installs it if it's not installed.
 # notebook tooling (VS Code kernel + smoke-test runner) - pinned like everything else
 ipykernel==6.29.5
 nbformat==5.10.4

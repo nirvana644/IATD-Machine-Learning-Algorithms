@@ -237,6 +237,93 @@ Review tables, equations, plots, and page breaks.
 
 Interactive charts must have a static image representation to appear in the LaTeX-generated PDF. If LaTeX reports missing packages, install those packages through your TeX distribution and retry.
 
+## Large Files on GitHub using LFS
+
+It can't be done with public repositories! I will obtain an error such as `batch response: @nirvana644 can not upload new objects to public fork nirvana644/IATD-Machine-Learning-Algorithms`
+
+```bash
+# 1. Initialise Git LFS
+brew install git-lfs
+git lfs install
+
+# 2. Track only the specified file
+git lfs track "data/lfwcrop_color.zip"
+
+# 3. Stage and commit
+git add .gitattributes
+git add -f data/lfwcrop_color.zip # The -f is only needed if the .gitignore excludes the file.
+git commit -m "Add LFWcrop colour dataset using Git LFS"
+
+# 4. Push to GitHub
+git push
+
+# 5. Verify
+git lfs ls-files
+
+# OR
+# 1. Undo the failed commit
+git reset --mixed HEAD~1
+# 2. Stop tracking the file with LFS
+git lfs untrack "data/lfwcrop_color.zip"
+# 3. Ignore just this ZIP
+echo "/data/lfwcrop_color.zip" >> .gitignore
+git add .gitignore
+git add .gitattributes
+git commit -m "Exclude large LFWcrop dataset"
+git push
+
+rm .gitattributes # Only if it's empty
+```
+
+Alternatively, I can split the ZIP into parts:
+
+```bash
+# 1. Split the ZIP
+split -b 75m -d \
+  data/lfwcrop_color.zip \
+  data/lfwcrop_color.zip.part
+
+# 2. Add the two parts to Git
+git add data/lfwcrop_color.zip.part00
+git add data/lfwcrop_color.zip.part01
+git commit -m "Add LFWcrop colour dataset in two parts"
+git push
+
+# 3. Reconstruct the original ZIP
+cat data/lfwcrop_color.zip.part00 \
+    data/lfwcrop_color.zip.part01 \
+    > data/lfwcrop_color.zip
+    
+# 4. Verify the reconstructed ZIP
+shasum -a 256 data/lfwcrop_color.zip
+```
+
+Checksum for this file `3b17b2fbbc7150c4458729ea06d2a18744542cac6617291df4fbff7ec51def67`
+
+Alternatively, I can recompress with a better compressor
+
+```bash
+# Install 7-Zip:
+brew install sevenzip
+
+# Recompress the contents without extracting them permanently
+mkdir -p /tmp/lfwcrop_repack
+unzip -q data/lfwcrop_color.zip -d /tmp/lfwcrop_repack
+
+# Good compression 115MB
+7zz a -t7z -m0=lzma2 -mx=9 \
+  data/lfwcrop_color.7z \
+  /tmp/lfwcrop_repack/*
+
+# Even more compression (but delivers the same as the previous) Also 115MB
+7zz a -t7z -m0=lzma2 -mx=9 -md=256m -ms=on \
+  data/lfwcrop_color_max.7z \
+  data/lfwcrop_color/
+
+# Compare the resulting sizes
+ls -lh data/lfwcrop_color.zip data/lfwcrop_color.7z data/lfwcrop_color_max.7z
+```
+
 ## Protect my final assignment
 
 Protect my final assignment from other students before we have all submitted the assignment.
