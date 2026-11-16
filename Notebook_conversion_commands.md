@@ -358,6 +358,15 @@ python -m jupyter nbconvert \
     
 chmod +x week_4_lesson_4_key_terminology_explained.sh
 ./week_4_lesson_4_key_terminology_explained.sh
+
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 4 Lesson 6 — Factorial Planes" \
+    --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+    week_4_lesson_6_factorial_planes.ipynb
 ```
 
 ## Week 5: Learning from limited labels and hidden patterns
