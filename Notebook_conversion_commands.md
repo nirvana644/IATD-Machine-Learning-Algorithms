@@ -359,6 +359,11 @@ python -m jupyter nbconvert \
 chmod +x week_4_lesson_4_key_terminology_explained.sh
 ./week_4_lesson_4_key_terminology_explained.sh
 
+# Convert svg image to png
+inkscape ./images/week_4/heat_propagation.svg \
+   --export-filename=./images/week_4/heat_propagation.png \
+  --export-type=png --export-width=1024
+# Then create the PDF
 python -m jupyter nbconvert \
     --to pdf \
     --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
@@ -367,7 +372,19 @@ python -m jupyter nbconvert \
     --LatexPreprocessor.title="Week 4 Lesson 6 — Factorial Planes" \
     --LatexPreprocessor.author_names="Álvaro Morán Gago" \
     week_4_lesson_6_factorial_planes.ipynb
-    
+
+
+# Original Eigenfaces notebook
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 4 Lesson 6 — Eigenfaces: Recovering Humans from Ghosts" \
+    --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+    week_4_lesson_6_eigenfaces_original.ipynb
+
+# Improved Eigenfaces notebook    
 for suffix in grey color; do
     if [[ "$suffix" == "grey" ]]; then
         use_grey=true
@@ -387,8 +404,18 @@ for suffix in grey color; do
         --output="week_4_lesson_6_eigenfaces_${suffix}" \
         --LatexPreprocessor.title=$'Week 4 Lesson 6 — Eigenfaces: Recovering Humans from Ghosts\n'"$subtitle" \
         --LatexPreprocessor.author_names="Álvaro Morán Gago" \
-        week_4_lesson_6_eigenfaces.ipynb || break
+        week_4_lesson_6_eigenfaces_improved.ipynb || break
 done
+
+# This is just to understand SVD
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 4 Lesson 6 — Extra to understand Singular Value Decomposition (SVD)" \
+    --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+    week_4_lesson_6_svd.ipynb
 ```
 
 ## Week 5: Learning from limited labels and hidden patterns
