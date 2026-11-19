@@ -416,6 +416,22 @@ python -m jupyter nbconvert \
     --LatexPreprocessor.title="Week 4 Lesson 6 — Extra to understand Singular Value Decomposition (SVD)" \
     --LatexPreprocessor.author_names="Álvaro Morán Gago" \
     week_4_lesson_6_svd.ipynb
+    
+# This is just to understand SVD and its relation to PCA
+for image in matrix_multiplication pca_svg_comparison; do
+    inkscape "./images/week_4/${image}.svg" \
+        --export-filename="./images/week_4/${image}.png" \
+        --export-type=png \
+        --export-width=1024
+done
+python -m jupyter nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 4 Lesson 6 — Extra to understand Singular Value Decomposition (SVD) and its relation to Principal Component Analysis (PCA)" \
+    --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+    week_4_lesson_6_compare_pca_and_svd.ipynb
 ```
 
 ## Week 5: Learning from limited labels and hidden patterns
