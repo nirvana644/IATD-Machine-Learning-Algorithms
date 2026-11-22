@@ -39,3 +39,8 @@ nbconvert[webpdf] # To convert images in week_4_lesson_3_apriori_vs_fp_growth.ip
 sympy # To convert a matrix to latex in week_4_lesson_4_key_terminology_explained.ipynb
 
 ipywidgets # To understand SVD in week_4_lesson_6_SVD_and_PCA_interactive.ipynb
+
+# AlphaFold protein structure exploration (week_5_lesson_2_alphafold_exploration.ipynb)
+biopython     # Parse PDB/mmCIF protein structures
+py3Dmol       # Interactive 3D molecular visualisation
+requests      # Download protein structures from AlphaFold API
