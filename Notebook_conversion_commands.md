@@ -432,6 +432,60 @@ python -m jupyter nbconvert \
     --LatexPreprocessor.title="Week 4 Lesson 6 — Extra to understand Singular Value Decomposition (SVD) and its relation to Principal Component Analysis (PCA)" \
     --LatexPreprocessor.author_names="Álvaro Morán Gago" \
     week_4_lesson_6_compare_pca_and_svd.ipynb
+    
+python -m nbconvert \
+    --config="./notebook_pdf/html_headings_config.py" \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 4 Lab 1 — Countries K-Means Clustering" \
+    --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+    4_a_KMeansClustering_Countries.ipynb
+
+: '
+# Scaling on and off
+for scaling in true false; do
+    subtitle="Scaling: ${scaling}"
+    USE_SCALING="$scaling" python -m jupyter nbconvert \
+        --config="./notebook_pdf/html_headings_config.py" \
+        --execute \
+        --to pdf \
+        --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+        --template=templates \
+        --output-dir="./notebook_pdf" \
+        --output="4_b_KMeansClustering_StudentEffort_scaling_${scaling}" \
+        --LatexPreprocessor.title=$'Week 4 Lab 2 — Students K-Means Clustering\n'"$subtitle" \
+        --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+        4_b_KMeansClustering_StudentEffort.ipynb
+done
+'
+
+: '
+Combinations:
+- USE_SCALING_BOOL True  USE_PREDEFINED_NUMBER_OF_CLUSTERS_BOOL True  --> The original exercise
+- USE_SCALING_BOOL False USE_PREDEFINED_NUMBER_OF_CLUSTERS_BOOL True  --> Variation 1
+- USE_SCALING_BOOL False USE_PREDEFINED_NUMBER_OF_CLUSTERS_BOOL False --> Variation 2
+'
+for combination in "true true" "false true" "false false"; do
+    scaling="${combination%% *}"
+    predefined="${combination##* }"
+
+    subtitle="Scaling: ${scaling} | Predefined clusters: ${predefined}"
+
+    USE_SCALING="$scaling" PREDEFINED_CLUSTERS="$predefined" \
+    python -m nbconvert \
+        --config="./notebook_pdf/html_headings_config.py" \
+        --execute \
+        --to pdf \
+        --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+        --template=templates \
+        --output-dir="./notebook_pdf" \
+        --output="4_b_KMeansClustering_StudentEffort_scaling_${scaling}_predefined_${predefined}" \
+        --LatexPreprocessor.title=$'Week 4 Lab 2 — Students K-Means Clustering\n'"$subtitle" \
+        --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+        4_b_KMeansClustering_StudentEffort.ipynb
+done
 ```
 
 ## Week 5: Learning from limited labels and hidden patterns
