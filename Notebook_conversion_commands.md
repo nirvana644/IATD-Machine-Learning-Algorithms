@@ -515,15 +515,40 @@ python -m nbconvert \
     --LatexPreprocessor.author_names="Álvaro Morán Gago" \
     5_b_SemiSupervised_LabelSpreading_original.ipynb
 
+# Version 1 (_v1) has the functions defined contained in week_5_semi_supervised_plots.py as part of the notebook. V2 uses week_5_semi_supervised_plots.py instead.
 python -m nbconvert \
     --config="./notebook_pdf/html_headings_config.py" \
     --to pdf \
     --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
     --template=templates \
     --output-dir="./notebook_pdf" \
+    --output="5_b_SemiSupervised_LabelSpreading_improved_v2" \
     --LatexPreprocessor.title=$'Week 5 Lab 2 — Semi-Supervised Learning & Label Spreading\nImproved notebook' \
     --LatexPreprocessor.author_names="Álvaro Morán Gago" \
     5_b_SemiSupervised_LabelSpreading_improved.ipynb
+    
+python -m nbconvert \
+    --config="./notebook_pdf/html_headings_config.py" \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title=$'Week 5 Lab 3 — Semi-Supervised Learning & Label Propagation\nOriginal notebook' \
+    --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+    5_c_SemiSupervised_LabelPropagation_original.ipynb
+
+# There is no version 1 and version 2 unlike lab 5_b because here I used week_5_semi_supervised_plots.py directly.
+# The difference between '5_c_SemiSupervised_LabelPropagation_improved_v1.ipynb' and '5_c_SemiSupervised_LabelPropagation_improved_v2.ipynb' is that the former only tests different parameters with the KNN kernel, while the second also tries to optimise the RBF kernel to find the best combination.
+python -m nbconvert \
+    --config="./notebook_pdf/html_headings_config.py" \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --output="5_c_SemiSupervised_LabelPropagation_improved" \
+    --LatexPreprocessor.title=$'Week 5 Lab 3 — Semi-Supervised Learning & Label Propagation\nImproved notebook' \
+    --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+    5_c_SemiSupervised_LabelPropagation_improved_v2.ipynb
 ```
 
 ## Week 6: Optimising and enhancing machine learning models
