@@ -264,12 +264,16 @@ python -m jupyter nbconvert \
     --LatexPreprocessor.title="Week 3 Lesson 2 — Decision Tree Regression" \
     week_3_decision_tree_3_regression.ipynb
 
+# I made a change to the notebook a few weeks after I originally compiled it. That's why there is a version 1 (_v1) and a version 2 (_v2).
+# Version 1 has the table LaTeX conversion as part of the notebook itself. Version 2 uses notebook_display.py
 python -m jupyter nbconvert \
     --to pdf \
     --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
     --template=templates \
     --output-dir="./notebook_pdf" \
+    --output="week_3_decision_tree_4_random-forest-for-beginners_v2" \
     --LatexPreprocessor.title="Week 3 Lesson 2 — Decision Tree \& Random Forest" \
+    --LatexPreprocessor.author_names="Álvaro Morán Gago" \
     week_3_decision_tree_4_random-forest-for-beginners.ipynb
     
 python -m jupyter nbconvert \
@@ -490,7 +494,23 @@ done
 
 ## Week 5: Learning from limited labels and hidden patterns
 
+```bash
+python -m nbconvert \
+    --config="./notebook_pdf/html_headings_config.py" \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title="Week 5 Lab 1 — Apriori algorithm" \
+    --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+    5_a_Apriori_BreadBasket.ipynb
+```
+
 ## Week 6: Optimising and enhancing machine learning models
+
+```bash
+PENDING
+```
 
 ## Extra
 
