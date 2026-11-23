@@ -447,7 +447,7 @@ python -m nbconvert \
     --LatexPreprocessor.author_names="Álvaro Morán Gago" \
     4_a_KMeansClustering_Countries.ipynb
 
-: '
+: << 'DEPRECATED'
 # Scaling on and off
 for scaling in true false; do
     subtitle="Scaling: ${scaling}"
@@ -463,7 +463,7 @@ for scaling in true false; do
         --LatexPreprocessor.author_names="Álvaro Morán Gago" \
         4_b_KMeansClustering_StudentEffort.ipynb
 done
-'
+DEPRECATED
 
 : '
 Combinations:
@@ -504,6 +504,26 @@ python -m nbconvert \
     --LatexPreprocessor.title="Week 5 Lab 1 — Apriori algorithm" \
     --LatexPreprocessor.author_names="Álvaro Morán Gago" \
     5_a_Apriori_BreadBasket.ipynb
+
+python -m nbconvert \
+    --config="./notebook_pdf/html_headings_config.py" \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title=$'Week 5 Lab 2 — Semi-Supervised Learning & Label Spreading\nOriginal notebook' \
+    --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+    5_b_SemiSupervised_LabelSpreading_original.ipynb
+
+python -m nbconvert \
+    --config="./notebook_pdf/html_headings_config.py" \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title=$'Week 5 Lab 2 — Semi-Supervised Learning & Label Spreading\nImproved notebook' \
+    --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+    5_b_SemiSupervised_LabelSpreading_improved.ipynb
 ```
 
 ## Week 6: Optimising and enhancing machine learning models
