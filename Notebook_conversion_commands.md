@@ -573,6 +573,46 @@ python -m nbconvert \
     --LatexPreprocessor.title=$'Week 6 Lab 1 — K-Means clustering improved with PCA\nImproved notebook' \
     --LatexPreprocessor.author_names="Álvaro Morán Gago" \
     6_a_KMeans_with_PCA_improved.ipynb
+    
+
+# For 6_b there's no need to use html_headings_config.py
+python -m nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title=$'Week 6 Lab 2 — Linear Discriminant Analysis (LDA)\nOriginal notebook' \
+    --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+    6_b_LogisticRegression_LDA_original.ipynb
+
+python -m nbconvert \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title=$'Week 6 Lab 2 — Linear Discriminant Analysis (LDA)\nImproved notebook' \
+    --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+    6_b_LogisticRegression_LDA_improved.ipynb
+
+python -m nbconvert \
+    --config="./notebook_pdf/html_headings_config.py" \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title=$'Week 6 Lab 3 — Pipelines & GridSearchCV\nOriginal notebook' \
+    --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+    6_c_LogisticRegression_PCA_GridSearch_original.ipynb
+
+python -m nbconvert \
+    --config="./notebook_pdf/html_headings_config.py" \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title=$'Week 6 Lab 3 — Pipelines & GridSearchCV\nImproved notebook' \
+    --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+    6_c_LogisticRegression_PCA_GridSearch_improved.ipynb
 ```
 
 ## Extra
