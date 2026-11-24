@@ -554,7 +554,25 @@ python -m nbconvert \
 ## Week 6: Optimising and enhancing machine learning models
 
 ```bash
-PENDING
+python -m nbconvert \
+    --config="./notebook_pdf/html_headings_config.py" \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title=$'Week 6 Lab 1 — K-Means clustering improved with PCA\nOriginal notebook' \
+    --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+    6_a_KMeans_with_PCA_original.ipynb
+
+python -m nbconvert \
+    --config="./notebook_pdf/html_headings_config.py" \
+    --to pdf \
+    --TemplateExporter.extra_template_basedirs="./notebook_pdf" \
+    --template=templates \
+    --output-dir="./notebook_pdf" \
+    --LatexPreprocessor.title=$'Week 6 Lab 1 — K-Means clustering improved with PCA\nImproved notebook' \
+    --LatexPreprocessor.author_names="Álvaro Morán Gago" \
+    6_a_KMeans_with_PCA_improved.ipynb
 ```
 
 ## Extra
